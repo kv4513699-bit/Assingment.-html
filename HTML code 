@@ -1,0 +1,112 @@
+<!-- KAPIL VERMA - AAJ KA ASSIGNMENT -->
+<html>
+<head><title>Kapil Verma - Assignment</title></head>
+<body style="margin:0;font-family:Arial;">
+
+<!-- COVER -->
+<div style="background:black;color:white;text-align:center;padding:30px;">
+<h1>Miracle Career Academy</h1>
+<h2>Assignment - JavaScript</h2>
+<p><b>Name:</b> Kapil Verma | <b>Gaon:</b> Khilchipur, MP | <b>GitHub:</b> kv4513699-bit</p>
+</div>
+
+<!-- NAV BAR -->
+<div style="background:#222;padding:15px;text-align:center;">
+<a href="#" onclick="showPage('topic1')" style="color:white;">1. Error</a> &nbsp;&nbsp;
+<a href="#" onclick="showPage('topic2')" style="color:white;">2. Try-Catch</a> &nbsp;&nbsp;
+<a href="#" onclick="showPage('topic3')" style="color:white;">3. Divide</a> &nbsp;&nbsp;
+<a href="#" onclick="showPage('topic4')" style="color:white;">4. Filter</a> &nbsp;&nbsp;
+<a href="#" onclick="showPage('topic5')" style="color:white;">5. Project</a>
+</div>
+
+<!-- TOPIC 1 - ERROR -->
+<div id="topic1" style="padding:20px;">
+<h2>Topic 1: Types of Error</h2>
+<p><b>1. Syntax Error:</b> Likhte hi galti, code chalega hi nahi. Ex: {{ product --- }} likh diya.</p>
+<p><b>2. Logical Error:</b> Code chalega, jawab galat dega, dhoondhna sabse mushkil. Ex: if(age > 18) ki jagah if(age >= 18) hona tha.</p>
+<p><b>3. Runtime Error:</b> Chalte-chalte ruk jayega, isko Exception bhi bolte hai. Ex: c = a + b me a ki value di hi nahi.</p>
+</div>
+
+<!-- TOPIC 2 - TRY CATCH -->
+<div id="topic2" style="display:none;padding:20px;">
+<h2>Topic 2: Try - Catch - Finally - Throw</h2>
+<p><b>try:</b> Main code likhte hai, koshish karte hai.</p>
+<p><b>catch:</b> Error aaye to pakadte hai, program band nahi hota.</p>
+<p><b>finally:</b> Chahe error aaye ya na aaye, ye hamesha chalta hai.</p>
+<p><b>throw:</b> Khud se error phenkte hai.</p>
+<pre>
+try { // main code
+  throw "Message"
+} catch(e) { // error pakdo
+} finally { // hamesha chalega
+}
+</pre>
+</div>
+
+<!-- TOPIC 3 - DIVIDE -->
+<div id="topic3" style="display:none;padding:20px;">
+<center>
+<h2>Topic 3: Divide By Zero - Practical</h2>
+<button onclick="display()" style="padding:10px 20px;background:black;color:white;">Click here - Divide Karo</button>
+<p id="demo2">Yaha result aayega</p>
+<p><b>10 / 2 = 5</b> | <b>10 / 0 = You can not Divide by zero!</b> | Dono me finally chalega.</p>
+</center>
+</div>
+
+<!-- TOPIC 4 - FILTER -->
+<div id="topic4" style="display:none;padding:20px;">
+<center>
+<h2>Topic 4: Filter() - Practical</h2>
+<p>filter() nayi list banata hai, sirf wahi value aati hai jo shart pass kare.</p>
+<button onclick="doFilter()" style="padding:10px 20px;background:black;color:white;">Filter Chalao</button>
+<p id="demo1">Yaha result aayega</p>
+<p>Shart: val % 2 == 0 (Even Number)</p>
+</center>
+</div>
+
+<!-- TOPIC 5 - PROJECT -->
+<div id="topic5" style="display:none;padding:20px;">
+<center>
+<h2>Topic 5: Project - NavBar + Product + Footer</h2>
+<div style="border:1px solid black;padding:10px;margin:10px;width:250px;">Voltas Fridge - ID: 1 - Price: 5768 - <button>Buy Now</button></div>
+<div style="border:1px solid black;padding:10px;margin:10px;width:250px;">Samsung Fridge - ID: 2 - Price: 10000 - <button>Buy Now</button></div>
+<div style="border:1px solid black;padding:10px;margin:10px;width:250px;">ABC Fridge - ID: 3 - Price: 1000 - <button>Buy Now</button></div>
+</center>
+</div>
+
+<!-- FOOTER -->
+<div style="background:black;color:white;text-align:center;padding:20px;">
+<p><b>Kapil Verma | Khilchipur, MP</b></p>
+<p>© 2026 Kapil Project - All Rights Reserved | Made by Kapil ❤️</p>
+</div>
+
+<script>
+function showPage(page){
+  document.getElementById("topic1").style.display="none";
+  document.getElementById("topic2").style.display="none";
+  document.getElementById("topic3").style.display="none";
+  document.getElementById("topic4").style.display="none";
+  document.getElementById("topic5").style.display="none";
+  document.getElementById(page).style.display="block";
+}
+function display(){
+  try{
+    var a = prompt("Enter no 1 : ");
+    var b = prompt("Enter no 2 : ");
+    if(b == 0){ throw "You can not Divide by zero!"; }
+    var c = a / b;
+    document.getElementById("demo2").innerHTML = "Division : " + c;
+  } catch(e){
+    document.getElementById("demo2").innerHTML = e;
+  } finally{
+    document.getElementById("demo2").innerHTML += "<br>This code always Run!!!";
+  }
+}
+function doFilter(){
+  const age = [23,28,22,13,20,35,67,80,14];
+  const ans = age.filter((val)=>{ if(val%2==0){ return true; } });
+  document.getElementById("demo1").innerHTML = "Arraye value : " + age + "<br>Filter Value : " + ans;
+}
+</script>
+</body>
+</html>
